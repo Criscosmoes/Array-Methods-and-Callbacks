@@ -11,35 +11,84 @@ console.log('its working');
 (c) Home Team goals for 2014 world cup final
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
+fifaData.forEach(cur => {
+    if(cur.Year === 2014 && cur.Stage === "Final"){
+        console.log(cur["Home Team Name"]); 
+    }
+})
+
+fifaData.forEach(cur => {
+    if(cur.Year === 2014 && cur.Stage === "Final"){
+        console.log(cur["Away Team Name"]); 
+    }
+})
+
+fifaData.forEach(cur => {
+    if(cur.Year === 2014 && cur.Stage === "Final"){
+        console.log(cur["Home Team Goals"]); 
+    }
+})
+
+fifaData.forEach(cur => {
+    if(cur.Year === 2014 && cur.Stage === "Final"){
+        console.log(cur["Away Team Goals"]); 
+    }
+})
+
+fifaData.forEach(cur => {
+    if(cur.Year === 2014 && cur.Stage === "Final"){
+        console.log(cur["Win conditions"]); 
+    }
+})
+
+
 
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
-function getFinals(/* code here */) {
+function getFinals(data) {
 
-    /* code here */
+    let final = fifaData.filter(cur => cur.Stage === "Final"); 
+
+
+    return final; 
 
 };
+
+
+console.log(getFinals(fifaData)); 
 
 /* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
 
-function getYears(/* code here */) {
+function getYears(cb) {
 
-    /* code here */
+    let years = cb.map(cur => cur.Year);  
+
+    return years; 
 
 };
 
-getYears();
+console.log(getYears(getFinals(fifaData))); 
 
 /* Task 4: Implement a higher-order function called `getWinners`, that accepts the callback function `getFinals()` and determine the winner (home or away) of each `finals` game. Return the name of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
+function getWinners(cb) {
 
-    /* code here */
+    let winners = []; 
+
+    for (let cur of cb){
+
+        
+
+
+    }
+
+
+    return winners; 
 
 };
 
-getWinners();
+console.log(getWinners(getFinals(fifaData))); 
 
 /* Task 5: Implement a higher-order function called `getWinnersByYear` that accepts the following parameters and returns a set of strings "In {year}, {country} won the world cup!" 
 
